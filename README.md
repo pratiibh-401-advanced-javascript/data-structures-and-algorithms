@@ -12,4 +12,4 @@
 * `npm test` to run test
 
 #### UML
-Link to an image of the UML for your application and response to events
+![queueWithStacks UML](./Data-Structures/queueWithStacks/assets/queueWithStacksUML.jpg)
