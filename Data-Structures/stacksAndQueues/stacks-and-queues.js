@@ -20,7 +20,7 @@ class Stack{
   }
   push(value){
     let node = new Node(value);
-    node.next = this.top
+    node.next = this.top;
     this.top = node;
     return this;
   }
@@ -47,18 +47,24 @@ console.log(myStack.pop());
 
 class Queue{
   constructor(){
+    this.front = null;
     this.rear = null;
-    this.array = [];
   }
   enqueue(value){
-    this.array.push(value);
-    this.rear = value;
+    if(this.front === null){
+      this.front = new Node(value, this.rear);
+    } else {
+      let temp = this.front;
+      this.front = new Node(value, temp);
+    }
   }
   dequeue(){
-    return this.array.shift();
+    let temp = this.front;
+    this.front = this.front.next;
+    return temp;
   }
   peek(){
-    return this.array[0];
+    return this.front;
   }
 }
 
