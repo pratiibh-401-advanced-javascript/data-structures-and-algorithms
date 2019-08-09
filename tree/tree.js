@@ -100,7 +100,7 @@ class BinaryTree {
     return results;
   }
 
-  levelOrder() {
+  breadthFirst() {
     let results = [];
     let nodeQueue= [];
 
@@ -148,3 +148,6 @@ console.log('preOrder', tree.preOrder());
 console.log('inOrder', tree.inOrder());
 console.log('postOrder', tree.postOrder());
 console.log('levelOrder', tree.levelOrder());
+
+
+module.exports = BinaryTree;
