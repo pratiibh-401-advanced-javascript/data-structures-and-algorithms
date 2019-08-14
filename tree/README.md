@@ -48,6 +48,11 @@ LevelOrder traversal of a binary tree
 ### insert method
 Inserts values and creates trees
 
+### findMaximumValue method
+Finds and returns the maximum value stored within all nodes of a Binary Tree
+
 
 ## UML
 ![breadthFirst UML](./assets/breadthFirstUML.jpg)
+![maxValue UML](./assets/maxValueUML.jpg)
+
