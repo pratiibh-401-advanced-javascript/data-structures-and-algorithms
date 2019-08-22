@@ -85,14 +85,6 @@ describe('Testing Linked list', () => {
     expect(newList.head.next.data).toEqual(2);
   });
 
-  it('Can successfully insert a node before the first node of a linked list', () => {
-    let newList = new TestLinkedList();
-    newList.append(2);
-    newList.insertBefore(2, 1);
-    expect('This is an edgecase');
-    expect(newList.head.next.data).toEqual(2);
-  });
-
   it('Can successfully insert after a node in the middle of the linked list', () => {
     let newList = new TestLinkedList();
     newList.append(1);
@@ -110,5 +102,31 @@ describe('Testing Linked list', () => {
     expect(newList.head.data).toEqual(1);
     expect(newList.head.next.data).toEqual(2);
   });
+
+  it('Where k is greater than the length of the linked list, return undefined', () => {
+    let newList = new TestLinkedList();
+    newList.append(1);
+    newList.append(2);
+    newList.append(3);
+    expect(newList.kFromTheEnd(5)).toBeUndefined();
+  });
+
+  it('Where k and the length of the list are the same, return undefined', () => {
+    let newList = new TestLinkedList();
+    newList.append(1);
+    newList.append(2);
+    newList.append(3);
+    expect(newList.kFromTheEnd(3)).toBeUndefined();
+  });
+
+  it('Where k is not a positive integer, return undefined', () => {
+    let newList = new TestLinkedList();
+    newList.append(1);
+    newList.append(2);
+    newList.append(3);
+    expect(newList.kFromTheEnd(-5)).toBeUndefined();
+  });
+
+
 });
 
