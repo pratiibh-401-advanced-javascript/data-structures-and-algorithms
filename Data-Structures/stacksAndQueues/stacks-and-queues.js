@@ -33,22 +33,14 @@ class Stack{
     return popped;
   }
 }
-let myStack = new Stack();
-myStack.push(1);
-myStack.push(2);
-myStack.push(3);
 
-console.log(myStack.stack);
-console.log(myStack.pop());
-console.log(myStack.pop());
-console.log(myStack.stack);
-console.log(myStack.pop());
 
 
 class Queue{
   constructor(){
     this.front = null;
     this.rear = null;
+    this.length = 0;
   }
   enqueue(value){
     if(this.front === null){
@@ -57,10 +49,12 @@ class Queue{
       let temp = this.front;
       this.front = new Node(value, temp);
     }
+    this.length++;
   }
   dequeue(){
     let temp = this.front;
     this.front = this.front.next;
+    this.length--;
     return temp;
   }
   peek(){
@@ -68,12 +62,6 @@ class Queue{
   }
 }
 
-let queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
 
-console.log(queue.array);
-console.log(queue.dequeue());
 
 module.exports = {Stack, Queue};
